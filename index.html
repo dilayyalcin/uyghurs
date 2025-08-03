@@ -361,16 +361,21 @@
   })();
 </script>
 
-	<script>
-  window.addEventListener('scroll', function revealContentOnce() {
+<script>
+  (function () {
     const content = document.querySelector('.content');
-    if (window.scrollY > 10) {
-      content.classList.remove('hidden-content');
-      content.classList.add('visible');
-      // Remove the event listener so it only happens once
-      window.removeEventListener('scroll', revealContentOnce);
+    const triggerPoint = window.innerHeight; // when we scroll past 100vh
+
+    function revealContentOnce() {
+      if (window.scrollY >= triggerPoint) {
+        content.classList.remove('hidden-content');
+        content.classList.add('visible');
+        window.removeEventListener('scroll', revealContentOnce);
+      }
     }
-  });
+
+    window.addEventListener('scroll', revealContentOnce, { passive: true });
+  })();
 </script>
 
 	<script>
@@ -410,6 +415,7 @@
 
   </body>
 </html>
+
 
 
 
