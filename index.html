@@ -10,6 +10,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
 
+	/* Make the hero occupy two screens worth of scroll.
+   The fade finishes after ~1 viewport height; adjust if you want slower/faster. */
+.hero-wrapper {
+  height: 200vh; /* how long the cross-fade section lasts */
+}
+
+/* Sticky hero that stays fixed during the first viewport of scrolling */
+.hero {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* Full-bleed image */
+#heroImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  will-change: opacity;
+}
+
+/* Headline overlays the image and starts hidden */
+#heroTitle {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 0 1rem;
+
+  /* Use your existing font family/size; just ensure readability on image */
+  color: #fff;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: opacity, transform;
+}
+
 	.hero {
   	height: 100vh;
   	width: 100%;
@@ -141,15 +185,17 @@
 
   <body>
 	  
-  <!-- Fullscreen Hero Image -->
-  <section class="hero">
-  <img src="erdo_and_uyghurs.jpg" alt="Erdogan and Uyghurs" />
-</section>
+    <!-- Sticky cross-fade hero -->
+  <section class="hero-wrapper">
+    <div class="hero" id="hero">
+      <img src="erdo_and_uyghurs.jpg" alt="Erdogan and Uyghurs" id="heroImg">
+      <h1 id="heroTitle">How the Turkish government - and its media - lost interest in the Uyghurs</h1>
+    </div>
+  </section>
 
 <div class="content hidden-content">
 
   <!-- Begin story content -->
-	  <h1>How the Turkish government - and its media - lost interest in the Uyghurs</h1>
 
   <p>Turkey regards the Uyghur people as ethnically and culturally related. The 8th-century Uyghur Khaganate is commemorated as one of the "16 historical Turkish states," symbolised by a soldier in traditional costume standing behind President Recep Tayyip Erdogan during official ceremonies held for high-level visits.</p>
 
@@ -327,8 +373,44 @@
   });
 </script>
 
+	<script>
+  (function () {
+    const wrapper = document.querySelector('.hero-wrapper');
+    const heroImg = document.getElementById('heroImg');
+    const heroTitle = document.getElementById('heroTitle');
+
+    function clamp(n, min, max) { return Math.min(Math.max(n, min), max); }
+
+    let raf = null;
+    function update() {
+      // How far we’ve scrolled through the first viewport of the hero wrapper
+      const rect = wrapper.getBoundingClientRect();
+      const total = window.innerHeight; // use 1 viewport height for the fade
+      const progress = clamp((0 - rect.top) / total, 0, 1);
+
+      // Cross-fade and a slight lift on the headline
+      heroImg.style.opacity = 1 - progress;
+      heroTitle.style.opacity = progress;
+      heroTitle.style.transform = `translateY(${20 - 20 * progress}px)`;
+
+      raf = null;
+    }
+
+    function onScroll() {
+      if (raf) return;
+      raf = requestAnimationFrame(update);
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', update);
+    // Initialize once on load
+    update();
+  })();
+</script>
+
   </body>
 </html>
+
 
 
 
