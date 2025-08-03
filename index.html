@@ -1,0 +1,285 @@
+<!-- The originial version of this template was made by Johnathan Soma and then messed with and customized by Aaron Reiss -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+
+      body {
+        background-color: #FFFFFF;
+        }
+
+      h1{
+        font-family: 'Cormorant Garamond', serif;
+        font-size: 36px;
+        max-width: 50%;
+        margin: 4rem auto 2rem auto;
+        }
+      
+      p{
+        max-width: 50%;
+        font-family: 'Inter', sans-serif;
+        margin: 0 auto 2rem auto;
+        font-size: 19px;
+      }
+      
+      #scrolly {
+        position: relative;
+        padding: 1rem;
+      }
+
+      .scrolly-overlay {
+        position: relative;
+        padding: 0;
+        max-width: 35rem;
+        margin-left: 2px;
+        margin-right: auto;
+      }
+
+      .sticky-thing {
+        position: -webkit-sticky;
+        position: sticky;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        z-index: 0;
+        top: 0;
+        height: 100vh;
+        /* Center everything inside */
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: center;
+      }
+
+      .step {
+        margin: 0 auto 2rem auto;
+        margin-bottom: 25rem;
+        background-color: #eee;
+        background-color: #fff;
+        color: black;
+        text-align: center;
+      }
+
+      .step p {
+        padding: 1rem;
+        font-size: 1.25rem;
+        border: black;
+      }
+
+      .photoDiv {
+        width: 49%;
+        margin-right: 0px;
+        margin-left: auto;
+        display: block;
+      }
+
+      .hidden { visibility: hidden; }
+
+      /* When it's less than 700 pixels wide, do normal scrollytelling */
+      @media only screen and (min-width: 700px) {
+        #scrolly.side-by-side {
+          display: flex;
+        }
+
+        #scrolly.side-by-side > div {
+          flex-basis: 0;
+          flex-grow: 1;
+          flex-shrink: 1;
+          padding: 0.75em;
+        }
+
+        #scrolly.side-by-side .scrolly-overlay {
+          margin-top: 70vh;
+          order: 0;
+          /* Change these to adjust sizing options */
+          min-width: 15rem;
+          max-width: 20rem;
+        }
+
+        #scrolly.side-by-side .sticky-thing {
+          order: 1;
+          flex-grow: 2;
+        }
+      }
+    </style>
+	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
+	
+  </head>
+
+  <body>
+	<h1>How the Turkish government - and its media - lost interest in the Uyghurs</h1>
+
+  <p>Turkey regards the Uyghur people as ethnically and culturally related. The 8th-century Uyghur Khaganate is commemorated as one of the "16 historical Turkish states," symbolised by a soldier in traditional costume standing behind President Recep Tayyip Erdogan during official ceremonies held for high-level visits.</p>
+
+  <p>In 2009, Erdogan described the alleged human rights abuses against China’s Uyghur population - including “mass surveillance, detention, indoctrination, and forced sterilisation” - as “nothing short of genocide”. A decade later, in 2019, Turkey’s Foreign Ministry accused China of pursuing “systematic assimilation” of the Uyghurs.</p>
+  
+  <p>However, a BBC Monitoring analysis shows that as Ankara has sought to deepen trade ties with Beijing, its public support for the Uyghur cause has diminished. Once vocal criticism has been reduced to token references, limited to brief mentions in annual UN General Assembly speeches or occasional remarks during bilateral meetings.</p>
+
+  <p>Turkey’s state-run news agency Anadolu has mirrored this shift. Its reporting on alleged Chinese abuses against Uyghurs fell from 30 stories in 2019 to just four in 2024.</p>  
+
+  <p>This analysis presents a timeline of the Turkish government's rhetorical shift away from strong criticism of China’s Uyghur policy. It also visualises the growing economic relationship between the two countries, as well as the sharp decline in Anadolu Agency’s coverage of alleged rights violations.</p>
+    
+      <section id="scrolly">
+        <div class="sticky-thing">
+<!-- Sticky Thing 1 goes below this line -->
+
+<img id="scrollyPhoto" class="photoDiv" src="erdo_withsoldiers_crisp.jpg">
+
+<!-- Sticky Thing 1 goes above this line -->
+
+        </div>
+
+        <div class="scrolly-overlay">
+          <div class="step" id="step1">
+            <p>STEP ONE<br><br>Changes the image</p>
+          </div>
+          <div class="step" id="step2">
+            <p>STEP TWO<br><br>Changes the image again, this is all by changing the "src" address that "#scrollyPhoto1" is looking for.</p>
+          </div>
+          <div class="step" id="step3">
+            <p>STEP THREE<br><br>You can add as many steps as you want. You could even add an image inside a scrolly step — just look at Etai, below:</p>
+            <img src="etai.jpg" style="margin: 0 auto">
+          </div>
+        </div>
+      </section>
+
+      <p>Then maybe I have a block of text talking about something or another and then I want to direct you to another map, or a different zoom level, or an image that I want to annotate — whatever. I can create another photoDiv below. In fact, I can add as many as I want.</p>
+
+      <p>This concept works best if you have a simple base map with a story that progresses with prose on the left and changing annotations on that base map on the right. and it requires that when you export images from Adobe Illustrator you ALWAYS USE THE ARTBOARD when saving and keep all save settings the same (size, image type, etc).</p>
+
+
+    <script>
+
+      
+    /* Scrollytelling code goes under here */
+
+      // Code for the Photo Div #1 (aka #scrollyPhoto1)
+        
+        // Entering Step One
+      d3.select("#step1").on('stepin',function(e) {
+        console.log("We've arrived at STEP ONE in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "map2.png");
+      })
+
+        // Entering Step Two
+        d3.select("#step2").on('stepin',function(e) {
+        console.log("We've arrived at STEP TWO in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "map3.png");
+      })
+
+       // Entering Step Three
+       d3.select("#step3").on('stepin',function(e) {
+        console.log("We've arrived at STEP Three in the photo div")
+        d3.select("#scrollyPhoto").attr("src", "map4.png");
+      })
+
+    </script>
+
+<script>
+    const scroller = scrollama();
+
+	scroller
+		.setup({
+			step: "#scrolly .scrolly-overlay .step",
+			offset: 0.5,
+			debug: false
+		})
+		.onStepEnter(function({ element, index, direction}) {
+			const event = new CustomEvent('stepin', { detail: { direction: direction } })
+			element.dispatchEvent(event);
+		})
+		.onStepExit(function({ element, index, direction }) {
+			const event = new CustomEvent('stepout', { detail: { direction: direction } })
+			element.dispatchEvent(event);
+		});
+
+	window.addEventListener("resize", scroller.resize);
+    </script>
+
+
+    <!-- ai2html resizer script -->
+
+<script type="text/javascript">
+  (function() {
+      // only want one resizer on the page
+      if (document.documentElement.className.indexOf("g-resizer-v3-init") > -1) return;
+      document.documentElement.className += " g-resizer-v3-init";
+      // require IE9+
+      if (!("querySelector" in document)) return;
+      function resizer() {
+          var elements = Array.prototype.slice.call(document.querySelectorAll(".g-artboard[data-min-width]")),
+              widthById = {};
+          elements.forEach(function(el) {
+              var parent = el.parentNode,
+                  width = widthById[parent.id] || parent.getBoundingClientRect().width,
+                  minwidth = el.getAttribute("data-min-width"),
+                  maxwidth = el.getAttribute("data-max-width");
+              widthById[parent.id] = width;
+
+              if (+minwidth <= width && (+maxwidth >= width || maxwidth === null)) {
+                  el.style.display = "block";
+              } else {
+                  el.style.display = "none";
+              }
+          });
+          try {
+              if (window.parent && window.parent.$) {
+                  window.parent.$("body").trigger("resizedcontent", [window]);
+              }
+              if (window.require) {
+                  require(['foundation/main'], function() {
+                      require(['shared/interactive/instances/app-communicator'], function(AppCommunicator) {
+                          AppCommunicator.triggerResize();
+                      });
+                  });
+              }
+          } catch(e) { console.log(e); }
+      }
+
+      document.addEventListener('DOMContentLoaded', resizer);
+      // feel free to replace throttle with _.throttle, if available
+      window.addEventListener('resize', throttle(resizer, 200));        
+
+      function throttle(func, wait) {
+          // from underscore.js
+          var _now = Date.now || function() { return new Date().getTime(); },
+              context, args, result, timeout = null, previous = 0;
+          var later = function() {
+              previous = _now();
+              timeout = null;
+              result = func.apply(context, args);
+              if (!timeout) context = args = null;
+          };
+          return function() {
+              var now = _now(), remaining = wait - (now - previous);
+              context = this;
+              args = arguments;
+              if (remaining <= 0 || remaining > wait) {
+                  if (timeout) {
+                      clearTimeout(timeout);
+                      timeout = null;
+                  }
+                  previous = now;
+                  result = func.apply(context, args);
+                  if (!timeout) context = args = null;
+              } else if (!timeout && options.trailing !== false) {
+                  timeout = setTimeout(later, remaining);
+              }
+              return result;
+          };
+      }
+
+     
+  })();
+</script>
+
+  </body>
+</html>
