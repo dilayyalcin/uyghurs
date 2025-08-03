@@ -23,7 +23,16 @@
   	height: 100%;
   	display: block;
 	}
-    
+
+	.hidden-content {
+  	opacity: 0;
+  	transition: opacity 0.8s ease-in-out;
+	}
+
+	.visible {
+  	opacity: 1;
+	}
+
       body {
         background-color: #FFFFFF;
         }
@@ -131,11 +140,13 @@
   </head>
 
   <body>
-	<body>
+	  
   <!-- Fullscreen Hero Image -->
   <section class="hero">
-    <img src="erdo_and_uyghurs.jpg" alt="Erdogan and Uyghurs" />
-  </section>
+  <img src="erdo_and_uyghurs.jpg" alt="Erdogan and Uyghurs" />
+</section>
+
+<div class="content hidden-content">
 
   <!-- Begin story content -->
 	  <h1>How the Turkish government - and its media - lost interest in the Uyghurs</h1>
@@ -304,8 +315,21 @@
   })();
 </script>
 
+	<script>
+  window.addEventListener('scroll', function revealContentOnce() {
+    const content = document.querySelector('.content');
+    if (window.scrollY > 10) {
+      content.classList.remove('hidden-content');
+      content.classList.add('visible');
+      // Remove the event listener so it only happens once
+      window.removeEventListener('scroll', revealContentOnce);
+    }
+  });
+</script>
+
   </body>
 </html>
+
 
 
 
