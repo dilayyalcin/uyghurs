@@ -18,11 +18,11 @@
 
 /* Sticky hero that stays fixed during the first viewport of scrolling */
 .hero {
-  position: sticky;
-  top: 0;
   height: 100vh;
   width: 100%;
   overflow: hidden;
+  position: relative;
+  z-index: 0; /* important for stacking context */
 }
 
 /* Full-bleed image */
@@ -34,6 +34,7 @@
   object-fit: cover;
   opacity: 1;
   will-change: opacity;
+  z-index: 1; /* sits below the headline */
 }
 
 /* Headline overlays the image and starts hidden */
@@ -53,7 +54,7 @@
   transform: translateY(20px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   will-change: opacity, transform;
-  z-index: 2;
+  z-index: 2; /* above the image */
   pointer-events: none;
 }
 
@@ -425,6 +426,7 @@ position: relative;
 
   </body>
 </html>
+
 
 
 
