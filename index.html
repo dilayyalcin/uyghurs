@@ -10,22 +10,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
 
-	/* Make the hero occupy two screens worth of scroll.
-   The fade finishes after ~1 viewport height; adjust if you want slower/faster. */
+/* -------- HERO WRAPPER -------- */
 .hero-wrapper {
-  height: 200vh; /* how long the cross-fade section lasts */
+  height: 200vh;
+  position: relative;
 }
 
-/* Sticky hero that stays fixed during the first viewport of scrolling */
+/* -------- STICKY HERO SECTION -------- */
 .hero {
+  position: sticky;
+  top: 0;
   height: 100vh;
   width: 100%;
   overflow: hidden;
-  position: relative;
-  z-index: 0; /* important for stacking context */
+  z-index: 0;
 }
 
-/* Full-bleed image */
+/* -------- FULLSCREEN IMAGE -------- */
 #heroImg {
   position: absolute;
   inset: 0;
@@ -34,10 +35,10 @@
   object-fit: cover;
   opacity: 1;
   will-change: opacity;
-  z-index: 1; /* sits below the headline */
+  z-index: 1;
 }
 
-/* Headline overlays the image and starts hidden */
+/* -------- HEADLINE OVER IMAGE -------- */
 #heroTitle {
   position: absolute;
   inset: 0;
@@ -49,144 +50,127 @@
   font-size: 2.5rem;
   font-weight: 700;
   color: #0B0B0B;
-  text-shadow: 0 2px 12px rgba(0,0,0,0.55);
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.55);
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
   will-change: opacity, transform;
-  z-index: 2; /* above the image */
+  z-index: 2;
   pointer-events: none;
 }
 
-.hero {
-height: 100vh;
-width: 100%;
-overflow: hidden;
-position: relative;
-	}
-
-	#heroImg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 1;
-  will-change: opacity;
-  z-index: 1;
+/* -------- FADE-IN FOR MAIN CONTENT -------- */
+.hidden-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
 }
 
-	.hidden-content {
-	  opacity: 0;
-  	transform: translateY(20px); /* pushes content slightly down */
-  	transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
-	}
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
-	.visible {
-  	opacity: 1;
-  	transform: translateY(0); /* slides content back up */
-	}
+/* -------- BODY AND TEXT STYLES -------- */
+body {
+  background-color: #FFFFFF;
+}
 
+h1 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 36px;
+  font-weight: 700;
+  max-width: 50%;
+  margin: 4rem auto 2rem auto;
+}
 
-      body {
-        background-color: #FFFFFF;
-        }
+p {
+  max-width: 50%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+  margin: 0 auto 2rem auto;
+  font-size: 14px;
+}
 
-      h1{
-        font-family: 'Cormorant Garamond', serif;
-        font-size: 36px;
-	font-weight: 700;
-        max-width: 50%;
-        margin: 4rem auto 2rem auto;
-        }
-      
-      p{
-        max-width: 50%;
-        font-family: 'Inter', sans-serif;
-	font-weight: 300;
-        margin: 0 auto 2rem auto;
-        font-size: 14px;
-      }
-      
-      #scrolly {
-        position: relative;
-        padding: 1rem;
-      }
+/* -------- SCROLLYTELLING STYLES -------- */
+#scrolly {
+  position: relative;
+  padding: 1rem;
+}
 
-      .scrolly-overlay {
-        position: relative;
-        padding: 0;
-        max-width: 35rem;
-        margin-left: 2px;
-        margin-right: auto;
-      }
+.scrolly-overlay {
+  position: relative;
+  padding: 0;
+  max-width: 35rem;
+  margin-left: 2px;
+  margin-right: auto;
+}
 
-      .sticky-thing {
-        position: -webkit-sticky;
-        position: sticky;
-        left: 0;
-        width: 100%;
-        margin: 0;
-        z-index: 0;
-        top: 0;
-        height: 100vh;
-        /* Center everything inside */
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        justify-content: center;
-      }
+.sticky-thing {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  z-index: 0;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
-      .step {
-        margin: 0 auto 2rem auto;
-        margin-bottom: 25rem;
-        background-color: #eee;
-        background-color: #fff;
-        color: black;
-        text-align: center;
-      }
+.step {
+  margin: 0 auto 2rem auto;
+  margin-bottom: 25rem;
+  background-color: #fff;
+  color: black;
+  text-align: center;
+}
 
-      .step p {
-        padding: 1rem;
-        font-size: 1.25rem;
-        border: black;
-      }
+.step p {
+  padding: 1rem;
+  font-size: 1.25rem;
+  border: black;
+}
 
-      .photoDiv {
-        width: 49%;
-        margin-right: 0px;
-        margin-left: auto;
-        display: block;
-      }
+.photoDiv {
+  width: 49%;
+  margin-right: 0px;
+  margin-left: auto;
+  display: block;
+}
 
-      .hidden { visibility: hidden; }
+.hidden {
+  visibility: hidden;
+}
 
-      /* When it's less than 700 pixels wide, do normal scrollytelling */
-      @media only screen and (min-width: 700px) {
-        #scrolly.side-by-side {
-          display: flex;
-        }
+/* -------- RESPONSIVE SCROLLYTELLING -------- */
+@media only screen and (min-width: 700px) {
+  #scrolly.side-by-side {
+    display: flex;
+  }
 
-        #scrolly.side-by-side > div {
-          flex-basis: 0;
-          flex-grow: 1;
-          flex-shrink: 1;
-          padding: 0.75em;
-        }
+  #scrolly.side-by-side > div {
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+    padding: 0.75em;
+  }
 
-        #scrolly.side-by-side .scrolly-overlay {
-          margin-top: 70vh;
-          order: 0;
-          /* Change these to adjust sizing options */
-          min-width: 15rem;
-          max-width: 20rem;
-        }
+  #scrolly.side-by-side .scrolly-overlay {
+    margin-top: 70vh;
+    order: 0;
+    min-width: 15rem;
+    max-width: 20rem;
+  }
 
-        #scrolly.side-by-side .sticky-thing {
-          order: 1;
-          flex-grow: 2;
-        }
-      }
+  #scrolly.side-by-side .sticky-thing {
+    order: 1;
+    flex-grow: 2;
+  }
+}
+	    
     </style>
 	<script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.0.4/scrollama.min.js"></script>
@@ -426,6 +410,7 @@ position: relative;
 
   </body>
 </html>
+
 
 
 
