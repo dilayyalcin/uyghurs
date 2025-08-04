@@ -210,9 +210,13 @@ p {
 	  </div>
 
           <div class="step" id="step2">
-           <p>In 2009, Erdogan described the alleged human rights abuses against China’s Uyghur population - including “mass surveillance, detention, indoctrination, and forced sterilisation” - as “nothing short of genocide”. A decade later, in 2019, Turkey’s Foreign Ministry accused China of pursuing “systematic assimilation” of the Uyghurs.</p>
-          </div>
-          <div class="step" id="step3">
+           <p>In 2009, Erdogan described the alleged human rights abuses against China’s Uyghur population - including “mass surveillance, detention, indoctrination, and forced sterilisation” - as “nothing short of genocide”.</p>
+           </div>
+	   <div class="step" id="step2b">
+	   <p>A decade later, in 2019, Turkey’s Foreign Ministry accused China of pursuing “systematic assimilation” of the Uyghurs.</p>
+           </div>
+	
+		<div class="step" id="step3">
            <p>However, a BBC Monitoring analysis shows that as Ankara has sought to deepen trade ties with Beijing, its public support for the Uyghur cause has diminished. Once vocal criticism has been reduced to token references, limited to brief mentions in annual UN General Assembly speeches or occasional remarks during bilateral meetings.</p>
             <img src="etai.jpg" style="margin: 0 auto">
 	  </div>
@@ -249,10 +253,14 @@ p {
 
 
         // Entering Step Two
-        d3.select("#step2").on('stepin',function(e) {
-        console.log("We've arrived at STEP TWO in the photo div")
-        d3.select("#scrollyPhoto").attr("src", "map3.png");
-      })
+       d3.select("#step2").on('stepin', function(e) {
+       d3.select("#scrollyPhoto").attr("src", "bbc_1.png");
+	});
+
+	d3.select("#step2b").on('stepin', function(e) {
+  	d3.select("#scrollyPhoto").attr("src", "bbc_2.png");
+	});
+
 
        // Entering Step Three
        d3.select("#step3").on('stepin',function(e) {
@@ -414,6 +422,7 @@ p {
 
   </body>
 </html>
+
 
 
 
