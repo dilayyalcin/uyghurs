@@ -227,10 +227,19 @@ p {
 	    </div>
 		
 	  <div class="step" id="step4">
-	    <p>Turkey’s state-run news agency Anadolu has mirrored this shift. Its reporting on alleged Chinese abuses against Uyghurs fell from 30 stories in 2019 to just four in 2024.</p>  
+	    <p>Turkey’s state-run news agency Anadolu has mirrored this shift.</p>  
           </div>
+	  <div class="step" id="step4b">
+	  <p>Its reporting on alleged Chinese abuses against Uyghurs fell from 30 stories in 2019 to just four in 2024.</p>
+	  </div>
+
 	  <div class="step" id="step5">
-	    <p>This analysis presents a timeline of the Turkish government's rhetorical shift away from strong criticism of China’s Uyghur policy. It also visualises the growing economic relationship between the two countries, as well as the sharp decline in Anadolu Agency’s coverage of alleged rights violations.</p>
+	    <p>State broadcaster TRT's reporting on alleged Uyghur rights violations showed the same trend.</p>  
+          </div>
+	  <div class="step" id="step5b">
+	  <p>Dropping from 10 reports on the issue in 2014 to zero in 2022 and 2023.</p>
+	  </div>
+	  
           </div>
 	  </div>
       </section>
@@ -257,7 +266,6 @@ p {
   	d3.select("#scrollyPhoto").attr("src", "erdo_withsoldiers_crisp.jpg");
 	});
 
-
         // Entering Step Two
        d3.select("#step2").on('stepin', function(e) {
        d3.select("#scrollyPhoto").attr("src", "bbc_1.png");
@@ -266,7 +274,6 @@ p {
 	d3.select("#step2b").on('stepin', function(e) {
   	d3.select("#scrollyPhoto").attr("src", "bbc_2.png");
 	});
-
 
        // Entering Step Three
        d3.select("#step3").on('stepin', function(e) {
@@ -277,6 +284,23 @@ p {
   	d3.select("#scrollyPhoto").attr("src", "Trade_Volume.png");
 	});
 
+	// Entering Step Four
+       d3.select("#step4").on('stepin', function(e) {
+       d3.select("#scrollyPhoto").attr("src", "AA_reporting.png");
+	});
+
+	d3.select("#step4b").on('stepin', function(e) {
+  	d3.select("#scrollyPhoto").attr("src", "AA_reporting.png");
+	});
+
+	// Entering Step Five
+       d3.select("#step5").on('stepin', function(e) {
+       d3.select("#scrollyPhoto").attr("src", "TRT_reporting.png");
+	});
+
+	d3.select("#step5b").on('stepin', function(e) {
+  	d3.select("#scrollyPhoto").attr("src", "TRT_reporting.png");
+	});
 	    
     </script>
 
@@ -432,6 +456,7 @@ p {
 
   </body>
 </html>
+
 
 
 
