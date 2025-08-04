@@ -134,10 +134,14 @@ p {
 }
 
 .photoDiv {
-  width: 49%;
-  margin-right: 0px;
-  margin-left: auto;
+  width: 100%;
+  max-width: 600px;
+  max-height: 80vh;
+  object-fit: contain;
+  aspect-ratio: auto; /* or remove if causing issues */
   display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hidden {
@@ -428,6 +432,7 @@ p {
 
   </body>
 </html>
+
 
 
 
