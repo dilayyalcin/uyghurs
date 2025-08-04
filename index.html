@@ -235,10 +235,11 @@ p {
       // Code for the Photo Div #1 (aka #scrollyPhoto1)
         
         // Entering Step One
-      d3.select("#step1").on('stepin',function(e) {
-        console.log("We've arrived at STEP ONE in the photo div")
-        d3.select("#scrollyPhoto").attr("src", "map2.png");
-      })
+	d3.select("#step1").on('stepin', function(e) {
+  	console.log("We've arrived at STEP ONE in the photo div");
+  	d3.select("#scrollyPhoto").attr("src", "erdo_withsoldiers_crisp.jpg");
+	});
+
 
         // Entering Step Two
         d3.select("#step2").on('stepin',function(e) {
@@ -406,6 +407,7 @@ p {
 
   </body>
 </html>
+
 
 
 
