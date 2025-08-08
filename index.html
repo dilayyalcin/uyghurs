@@ -224,7 +224,10 @@ p {
 	    <div class="step" id="step3b">
 	    <p>Once vocal criticism has been reduced to token references, limited to brief mentions in annual UN General Assembly speeches or occasional remarks during bilateral meetings.</p>
 	    </div>
-		
+		<div class="step" id="step3c">
+	    <p>All while Turkey saw historically high inflation rates and the two countries' trade surged.</p>
+	    </div>
+			
 	  <div class="step" id="step4">
 	    <p>Turkey’s state-run news agency Anadolu has mirrored this shift.</p>  
           </div>
@@ -271,29 +274,33 @@ p {
 
        // Entering Step Three
        d3.select("#step3").on('stepin', function(e) {
-       d3.select("#scrollyPhoto").attr("src", "Trade_Volume.png");
+       d3.select("#scrollyPhoto").attr("src", "trade_inflation.png");
 	});
 
 	d3.select("#step3b").on('stepin', function(e) {
-  	d3.select("#scrollyPhoto").attr("src", "Trade_Volume.png");
+  	d3.select("#scrollyPhoto").attr("src", "trade_inflation.png");
 	});
 
+	d3.select("#step3c").on('stepin', function(e) {
+  	d3.select("#scrollyPhoto").attr("src", "trade_inflation.png");
+	});
+		
 	// Entering Step Four
        d3.select("#step4").on('stepin', function(e) {
-       d3.select("#scrollyPhoto").attr("src", "AA_reporting.png");
+       d3.select("#scrollyPhoto").attr("src", "state_media_uyghur.png");
 	});
 
 	d3.select("#step4b").on('stepin', function(e) {
-  	d3.select("#scrollyPhoto").attr("src", "AA_reporting.png");
+  	d3.select("#scrollyPhoto").attr("src", "state_media_uyghur.png");
 	});
 
 	// Entering Step Five
        d3.select("#step5").on('stepin', function(e) {
-       d3.select("#scrollyPhoto").attr("src", "TRT_reporting.png");
+       d3.select("#scrollyPhoto").attr("src", "state_media_uyghur.png");
 	});
 
 	d3.select("#step5b").on('stepin', function(e) {
-  	d3.select("#scrollyPhoto").attr("src", "TRT_reporting.png");
+  	d3.select("#scrollyPhoto").attr("src", "state_media_uyghur.png");
 	});
 	    
     </script>
@@ -450,6 +457,7 @@ p {
 
   </body>
 </html>
+
 
 
 
