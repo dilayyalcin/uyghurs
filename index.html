@@ -185,7 +185,7 @@ p {
     <!-- Sticky cross-fade hero -->
   <section class="hero-wrapper">
     <div class="hero" id="hero">
-      <img src="erdo_and_uyghurs.jpg" alt="Erdogan and Uyghurs" id="heroImg">
+      <img src="erdogan_uyghurs.jpg" alt="Erdogan and Uyghurs" id="heroImg">
       <h1 id="heroTitle">How the Turkish government - and its media - lost interest in the Uyghurs</h1>
     </div>
   </section>
@@ -197,52 +197,61 @@ p {
         <div class="sticky-thing">
 <!-- Sticky Thing 1 goes below this line -->
 
-<img id="scrollyPhoto" class="photoDiv" src="erdo_withsoldiers_crisp.jpg">
+<img id="scrollyPhoto" class="photoDiv" src="GettyImages-521927990.jpg">
 
 <!-- Sticky Thing 1 goes above this line -->
 
         </div>
 
         <div class="scrolly-overlay">
-          <div class="step" id="step1">
+      <div class="step" id="step1">
 	  <p>Turkey regards the Uyghur people as ethnically and culturally related.</p>
 	  </div>
 	  <div class="step" id="step1b">
-  	  <p>The 8th-century Uyghur Khaganate is commemorated as one of the "16 historical Turkish states," symbolised by a soldier in traditional costume standing behind President Recep Tayyip Erdogan during official ceremonies held for high-level visits.</p>
+  	  <p>The 8th-century Uyghur Khaganate is commemorated as one of the "16 historical Turkish states",</p>
+	  </div>
+	  <div class="step" id="step1c">
+  	  <p>symbolised by a soldier in traditional costume standing behind President Recep Tayyip Erdogan during official ceremonies held for high-level visits.</p>
 	  </div>
 
-          <div class="step" id="step2">
-           <p>In 2009, Erdogan described the alleged human rights abuses against China’s Uyghur population - including “mass surveillance, detention, indoctrination, and forced sterilisation” - as “nothing short of genocide”.</p>
-           </div>
-	   <div class="step" id="step2b">
-	   <p>A decade later, in 2019, Turkey’s Foreign Ministry accused China of pursuing “systematic assimilation” of the Uyghurs.</p>
-           </div>
+      <div class="step" id="step2">
+      <p>In 2009, Erdogan described the alleged human rights abuses against China’s Uyghur population...</p>
+	  </div>  
+	  <div class="step" id="step2b">
+      <p>- including “mass surveillance, detention, indoctrination, and forced sterilisation” -</p>
+	  </div>	  
+	  <div class="step" id="step2c">
+      <p>as “nothing short of genocide”.</p>
+	  </div>	  
+	  <div class="step" id="step2d">
+	  <p>A decade later, in 2019, Turkey’s Foreign Ministry accused China of pursuing “systematic assimilation” of the Uyghurs.</p>
+  	  </div>
 	
-	   <div class="step" id="step3">
-           <p>However, a BBC Monitoring analysis shows that as Ankara has sought to deepen trade ties with Beijing, its public support for the Uyghur cause has diminished.</p>
-	    </div>
-	    <div class="step" id="step3b">
-	    <p>Once vocal criticism has been reduced to token references, limited to brief mentions in annual UN General Assembly speeches or occasional remarks during bilateral meetings.</p>
-	    </div>
-		<div class="step" id="step3c">
-	    <p>All while Turkey saw historically high inflation rates and the two countries' trade surged.</p>
-	    </div>
+	  <div class="step" id="step3">
+      <p>However, a BBC Monitoring analysis shows that as Ankara has sought to deepen trade ties with Beijing, its public support for the Uyghur cause has diminished.</p>
+	  </div>
+	  <div class="step" id="step3b">
+	  <p>Once vocal criticism has been reduced to token references, limited to brief mentions in annual UN General Assembly speeches or occasional remarks during bilateral meetings.</p>
+	  </div>
+	  <div class="step" id="step3c">
+	  <p>All while Turkey saw historically high inflation rates and the two countries' trade surged.</p>
+	  </div>
 			
 	  <div class="step" id="step4">
-	    <p>Turkey’s state-run news agency Anadolu has mirrored this shift.</p>  
-          </div>
+	  <p>Turkey’s state-run news agency Anadolu has mirrored this shift.</p>  
+      </div>
 	  <div class="step" id="step4b">
 	  <p>Its reporting on alleged Chinese abuses against Uyghurs fell from 30 stories in 2019 to just four in 2024.</p>
 	  </div>
 
 	  <div class="step" id="step5">
-	    <p>State broadcaster TRT's reporting showed a similar trend.</p>  
-          </div>
+	  <p>State broadcaster TRT's reporting showed a similar trend.</p>  
+      </div>
 	  <div class="step" id="step5b">
 	  <p>Dropping from 10 reports on the issue in 2014 to zero in 2022 and 2023.</p>
 	  </div>
 	  
-          </div>
+    
 	  </div>
       </section>
 
@@ -256,47 +265,60 @@ p {
         // Entering Step One
 	d3.select("#step1").on('stepin', function(e) {
 	console.log("We've arrived at STEP ONE in the photo div");
-  	d3.select("#scrollyPhoto").attr("src", "erdo_withsoldiers_crisp.jpg");
+  	d3.select("#scrollyPhoto").attr("src", "GettyImages-521927990.jpg");
 	});
 
 	d3.select("#step1b").on('stepin', function(e) {
   	d3.select("#scrollyPhoto").attr("src", "Uyghur_Khaganate.jpg");
 	});
 
-        // Entering Step Two
-       d3.select("#step2").on('stepin', function(e) {
-       d3.select("#scrollyPhoto").attr("src", "bbc_1.png");
+	d3.select("#step1b").on('stepin', function(e) {
+  	d3.select("#scrollyPhoto").attr("src", "erdo_withsoldiers_crisp.jpg");
+	});
+
+  	  // Entering Step Two
+    d3.select("#step2").on('stepin', function(e) {
+    d3.select("#scrollyPhoto").attr("src", "bbc_1.jpg");
 	});
 
 	d3.select("#step2b").on('stepin', function(e) {
-  	d3.select("#scrollyPhoto").attr("src", "bbc_2.png");
+  	d3.select("#scrollyPhoto").attr("src", "bbc_2.jpg");
 	});
 
+	d3.select("#step2c").on('stepin', function(e) {
+    d3.select("#scrollyPhoto").attr("src", "bbc_3.jpg");
+	});
+
+	d3.select("#step2d").on('stepin', function(e) {
+    d3.select("#scrollyPhoto").attr("src", "FM_assimilation.jpg");
+	});
+
+
        // Entering Step Three
-       d3.select("#step3").on('stepin', function(e) {
-       d3.select("#scrollyPhoto").attr("src", "trade_inflation.png");
+    d3.select("#step3").on('stepin', function(e) {
+    d3.select("#scrollyPhoto").attr("src", "erdogan-cinping.jpg");
 	});
 
 	d3.select("#step3b").on('stepin', function(e) {
-  	d3.select("#scrollyPhoto").attr("src", "trade_inflation.png");
+  	d3.select("#scrollyPhoto").attr("src", "erdo_bmgk.jpg");
 	});
 
 	d3.select("#step3c").on('stepin', function(e) {
   	d3.select("#scrollyPhoto").attr("src", "trade_inflation.png");
 	});
 		
-	// Entering Step Four
-       d3.select("#step4").on('stepin', function(e) {
-       d3.select("#scrollyPhoto").attr("src", "state_media_uyghur.png");
+		// Entering Step Four
+    d3.select("#step4").on('stepin', function(e) {
+    d3.select("#scrollyPhoto").attr("src", "state_media_uyghur.png");
 	});
 
 	d3.select("#step4b").on('stepin', function(e) {
   	d3.select("#scrollyPhoto").attr("src", "state_media_uyghur.png");
 	});
 
-	// Entering Step Five
-       d3.select("#step5").on('stepin', function(e) {
-       d3.select("#scrollyPhoto").attr("src", "state_media_uyghur.png");
+		// Entering Step Five
+    d3.select("#step5").on('stepin', function(e) {
+    d3.select("#scrollyPhoto").attr("src", "state_media_uyghur.png");
 	});
 
 	d3.select("#step5b").on('stepin', function(e) {
@@ -457,6 +479,7 @@ p {
 
   </body>
 </html>
+
 
 
 
